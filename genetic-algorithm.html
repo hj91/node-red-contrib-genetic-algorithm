@@ -1,0 +1,66 @@
+<!--
+
+Copyright 2023 Bufferstack.IO Analytics Technology LLP, Pune.
+
+Licensed under the GNU General Public License, Version 3.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.gnu.org/licenses/gpl-3.0.html
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-->
+
+<script type="text/javascript">
+    RED.nodes.registerType('genetic-algorithm',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            target: {value:"", required:true},
+            populationSize: {value:100, required:true},
+            mutationRate: {value:0.01, required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-leaf",
+        label: function() {
+            return this.name||"genetic-algorithm";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="genetic-algorithm">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-target"><i class="icon-tag"></i> Target</label>
+        <input type="text" id="node-input-target" placeholder="Target">
+    </div>
+    <div class="form-row">
+        <label for="node-input-populationSize"><i class="icon-tag"></i> Population Size</label>
+        <input type="text" id="node-input-populationSize" placeholder="Population Size">
+    </div>
+    <div class="form-row">
+        <label for="node-input-mutationRate"><i class="icon-tag"></i> Mutation Rate</label>
+        <input type="text" id="node-input-mutationRate" placeholder="Mutation Rate">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="genetic-algorithm">
+    <p>This node simulates a basic genetic algorithm. It takes a target string as input and evolves a population of random strings towards the target.</p>
+    <p>The node has the following configuration options:</p>
+    <ul>
+        <li><b>Target</b>: The target string that the genetic algorithm will attempt to evolve towards.</li>
+        <li><b>Population Size</b>: The size of the population in each generation.</li>
+        <li><b>Mutation Rate</b>: The probability that a mutation will occur when creating a new generation.</li>
+    </ul>
+    <p>The node will output an object that includes the best individual string from each generation, its fitness, the generation number, and the original configuration parameters.</p>
+</script>
