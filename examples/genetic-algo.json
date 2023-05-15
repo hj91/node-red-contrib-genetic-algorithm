@@ -1,0 +1,82 @@
+[
+    {
+        "id": "7618f6f4d698a4fd",
+        "type": "tab",
+        "label": "genetic-algo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "024ff9d0e96a376e",
+        "type": "genetic-algorithm",
+        "z": "7618f6f4d698a4fd",
+        "name": "",
+        "target": "harshad joshi",
+        "populationSize": "100",
+        "mutationRate": "0.2",
+        "x": 470,
+        "y": 180,
+        "wires": [
+            [
+                "996409fb1e8b456c"
+            ]
+        ]
+    },
+    {
+        "id": "d831bad8ca5aef0f",
+        "type": "inject",
+        "z": "7618f6f4d698a4fd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 240,
+        "y": 180,
+        "wires": [
+            [
+                "024ff9d0e96a376e"
+            ]
+        ]
+    },
+    {
+        "id": "996409fb1e8b456c",
+        "type": "debug",
+        "z": "7618f6f4d698a4fd",
+        "name": "debug 155",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 690,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "49c4db24fc30613c",
+        "type": "comment",
+        "z": "7618f6f4d698a4fd",
+        "name": "Genetic Algorithm test",
+        "info": "Release - 1",
+        "x": 200,
+        "y": 60,
+        "wires": []
+    }
+]
